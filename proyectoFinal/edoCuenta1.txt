@@ -1,0 +1,8 @@
+			 Hola este es tu estado de la cuenta 3130327542123654
+Cliente Miguel Aguirre Olvera
+Numero de cliente 12345678910
+
+Realizo un ingreso										10000
+Consulta de saldo										0
+Retiro la cantidad										0
+saldo final 					10000

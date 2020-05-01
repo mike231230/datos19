@@ -1,0 +1,83 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{graphicx}
+\author{Miguel Angel Aguirre Olvera}
+\title{Practica 1 memoria dinamica}
+\usepackage{multicol}
+
+
+\begin{document}
+\maketitle
+\begin{multicols}{2}
+\begin{center}
+\textbf{¿Que es la memoria dinamica?}
+\end{center}
+Es memoria que se reserva en tiempo de ejecucion. Su principal ventaja frente a la memoria estatica es que su tamaño puede variar durante la ejecucion de un programa. En C el programador es el encargado de liberar esta memoria cuando no la utilice mas. El uso de memoria dinamica es necesario cuando no conocemos el numero de datos o elementos a tratar; sin embargo es algo mas lento ya que el tiempo de ejecucion depende del espacio que se va a usar, en cambio la memoria estatica es mas rapida ya que esta disponible desde que se inicio el programa 
+
+\begin{center}
+\textbf{codigo}
+\end{center}
+  include iostream
+ 	using namespace std;
+ 	
+	struct persona
+		char nombre[25];
+		int edad;
+		char id[10];
+	
+	;
+
+ 	int main
+ 	 
+ 	persona *persona1, *persona2;
+
+ 	persona1= new persona ;
+
+ 	cout dame el nombre de la persona endl;
+
+ 	cin persona1 nombre;
+
+ 	cout dame la edad endl;
+
+ 	cin persona1 edad;
+
+ 	cout dame el numero de identidad endl;
+
+ 	cin persona1 id;
+
+	 	persona2= new persona();
+
+ 	cout dame el nombre de la persona endl;
+
+ 	cin persona2 nombre;
+
+ 	cout dame la edad endl;
+
+ 	cin persona2 edad;
+
+ 	cout dame el numero de identidad endl;
+
+ 	cin persona2 id
+ 	
+
+ 	cout persona1 nombre persona1 edad persona1 id endl;
+
+ 	
+
+ 	cout persona2 nombre persona2 edad persona2 id endl;
+
+ 	
+
+	delete persona1;
+
+
+	delete persona2;
+ 	
+ 	
+ 	
+ 	return 0;
+
+\end{multicols}
+
+\end{document}

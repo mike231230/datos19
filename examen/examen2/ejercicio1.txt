@@ -1,0 +1,13 @@
+el vector es 51,21,39,80,36
+el orden despues de tres pasadas es 21 36 39 80 51
+la respuesta es ninguno porque si hacemos ese recorrido con
+el de intercambio nos da como resultado ese orden
+ademas de que el 51 para que pueda irse al final del
+arreglo saltandose el 80 tiene que haber una sustitucion
+y esta se da cuando se cambia el 51 por el 39 es decir
+en la segunda pasada el orden iba
+
+21 36 51 80 39
+
+por lo que al momento del cambio se manda el 51 hasta el final
+y el 39 se recorre a la posicion del 51.

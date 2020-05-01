@@ -1,0 +1,199 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Proyecto Final ATM}
+\author{Miguel Angel Aguirre Olvera }
+\date{May 2019}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[activeacute,spanish]{babel}
+\DeclareGraphicsExtensions{.png}
+
+\begin{document}
+
+\maketitle 
+
+\begin{multicols}{2}
+
+\begin{center}
+\textbf{Introducción}
+\end{center}
+En este sistema vemos aplicado el conocimiento de estructura de datos para la creación de un cajero automático ATM el cual nos sirve para poner en practica temas como pilas colas y funciones para la realización de operaciones en las cuales vemos la utilización de estructuras para almacenar los datos del cliente ademas de utilizar archivos de texto para poder ingresar información.
+\begin{center}
+\textbf{Problema principal}
+\end{center}
+Simulación  de  un  cajero  ATM.  Se  necesita  desarrollar una  simulación  real  de  las  operaciones  de  un  cajero automático usando TDAs. El cajero debe tener al menos 3 cuentas  cargadas  de  1  solo  usuario  inicialmente.  Apartir  de  ahí,  se  simula  desde  que  un  usuario accede mediante su tarjeta y se deberá modelar al menos estos escenarios: 
+
+Transferencia entre cuentas del mismo usuario.
+Transferencia a otras cuentas
+Pago de servicios (al menos que existan 5)
+Abono a cuentas
+Impresión  de  las  diferentes  operaciones  que  realizó  el usuario en un estado de cuenta
+
+\begin{center}
+\textbf{Implementacion}
+\end{center}
+ Para dar solución a este problema cree 3 estructuras
+ una estructura llamada cliente, que es aquí donde tendremos los datos del cliente como lo es su numero de cliente, nombre, apellido paterno y materno,
+ademas de que tiene una conexión con la siguiente estructura.
+ La segunda estructura la llame cuentas que es donde abarcara un numero de cuenta del cliente asociado y un saldo el que se ira modificando con cada movimiento del usuario y por ultimo.
+ La tercera estructura la llame transacciones que es una LIFO primeras entradas primeras salidas esto significa que el primer dato en entrar a esta estructura es el primero en salir, lo que me sirve para la creación del estado de cuenta y en el cual continúen el movimiento de la cuenta y el monto que se requiere.
+ Yo creo que con estas tres estructuras es suficiente para la utilización de un cajero automático de este tipo, ademas de la impresión del estado de cuenta y los movimientos
+ 
+ Por ultimo utilice las siguientes funciones vistas en clase que nos sirven para la creación de estructuras y para poder movernos dentro de las estructuras para hacer operaciones 
+\begin{center}
+    \textbf{Pseudocodigo:}
+\end{center}
+
+Inicio 
+    Asigna usuario nuevo nip 
+    Ingresa usuario con nip 
+    si aux==nip
+    Accede a cuentas
+        Elegir cuenta a la cual se haran movimientos 
+            Si opcion != 4
+                Entra a menu
+                    Eleccion en el menu
+
+                    Opción 1 ingreso
+                        cliente saldo=saldo+monto
+                        regresa monto 
+                        hacer movimiento ingreso,monto
+
+                    Opcion 2 consulta 
+                        escribir saldo
+
+                    Opcion 3 retiro
+                        si retiro>cliente saldo
+                        escribir saldo insuficiente 
+                        sino 
+                        cliente saldo=saldo-retiro
+                        regresa monto
+                        fin si
+                        hacermovimiento(retiro,monto)
+                
+                    Opcion 4 pago servicios
+                        
+                        Opcion 1 pago agua
+                            numero de cuenta
+                            monto a pagar
+                            si monto<saldo
+                            saldo=saldo-monto
+                            regresa monto 
+                            sino 
+                            escribir saldo insuficiente
+                        
+                        Opcion 2 pago luz
+                            numero de cuenta
+                            monto a pagar
+                            si monto<saldo
+                            saldo=saldo-monto
+                            regresa monto 
+                            sino 
+                            escribir saldo insuficiente
+    
+                        Opcion 3 pago telefono 
+                            numero de cuenta
+                            monto a pagar
+                            si monto<saldo
+                            saldo=saldo-monto
+                            regresa monto 
+                            sino 
+                            escribir saldo insuficiente
+                        
+                        Opcion 4 pago predio
+                            numero de cuenta
+                            monto a pagar
+                            si monto<saldo
+                            saldo=saldo-monto
+                            regresa monto 
+                            sino 
+                            escribir saldo insuficiente
+                        
+                        Opcion 5 tiempo aire 
+                            numero de cuenta
+                            monto a pagar
+                            si monto<saldo
+                            saldo=saldo-monto
+                            regresa monto 
+                            sino 
+                            escribir saldo insuficiente
+                        
+                        Opcion 6 regresar menu
+                            menu()
+                        hacer movimiento(pago servicio,monto)
+                    
+                    Opcion 5 impresion estado de cuenta 
+                        imprimirEdo (nueva,cfinal,n)
+                            si n=1 
+                            abrir archivo edocuenta1.txt
+                            fin si 
+                            si n=2
+                            abrir archivo edocuenta2.txt
+                            fin si 
+                            si n=3
+                            abrir archivo edocuenta3.txt
+                            fin si
+                            escribir en archivo 
+                            hola este es tu estado de la cuenta, numero de cuenta  
+                            cliente nombre, apellidop, apellidom 
+                            numero de cliente 
+                            mientras que cfinal!=NULL 
+                                archivo cfinal.movimiento
+                                archivo cfinal.cantidad 
+                                cfinal enlace siguiente 
+                            fin mientras
+                            saldo final, cliente saldo 
+                    
+                    Opcion 6 transferencia a otra cuenta
+                    cuenta a cuenta(cliente n) 
+                        monto 
+                        elige cuenta a transferir 
+                        cliente saldo=cliente saldo-monto
+                        cliente saldo=cliente saldo + monto
+                        regresa monto 
+                    hacer movimiento(traspaso cuenta, monto)
+                    opcion 7 regresar a cuentas
+            sino 
+            Regresa
+            
+        fin si
+        
+    sino 
+fin si 
+fin
+
+\begin{center}
+    \textbf{Diagramas de flujo }
+\end{center}
+    \includegraphics[scale=.25]{trabajofinal.png}
+    
+    \includegraphics[scale=.15]{trabajofinal1.png}
+    
+    
+    
+    \includegraphics[scale=.07]{trabajofinal2.png}
+    
+    
+    
+    
+    \includegraphics[scale=.10]{trabajofinal3.png}
+    
+    \includegraphics[scale=.1]{trabajofinal4.png}
+    
+    \includegraphics[scale=.1]{trabajofinal5.png}
+    
+    \includegraphics[scale=.1]{trabajofinal6.png}
+    
+    \includegraphics[scale=.1]{trabajofinal7.png}
+    
+    
+    \includegraphics[scale=.15]{trabajofinal8.png}
+
+\end{multicols}
+\end{document}
